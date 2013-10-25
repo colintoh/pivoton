@@ -4,6 +4,8 @@ Pivoton
 ==============================
 Adding a pivotal animation to your buttons.
 
+![Pivoton Logo](http://colintoh.github.io/pivoton/example/images/demo.png)
+
 **Demo page**: http://colintoh.github.io/pivoton/example/index.html
 
 **Blog Post**:
