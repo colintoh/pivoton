@@ -1,0 +1,130 @@
+@import 'nib'
+
+
+/*========*/
+#fatBtn
+	margin: 20px
+
+/*========*/
+
+.stage
+	perspective: 400
+	perspective-origin: 50% 50%
+
+
+/*.wrapper
+    width:200px
+    position: absolute
+
+
+.inner-wrapper
+	position:relative
+	height: 80px
+	z-index:10
+	transform-style: preserve-3d*/
+
+
+.pivoton-button
+	transition: all 0.3s ease
+	transform-style: preserve-3d
+	transform: rotate3d(1,0.5,0,0deg) translateZ(0)
+
+
+.pivoton-overlay
+	position:absolute
+	z-index:1
+	opacity:0
+
+	&:active,&:hover
+		background: black
+
+.pivoton-top
+	background:blue
+	width:100%
+	height: 40px
+	top:0
+
+
+.pivoton-right
+	width:25px
+	top:0
+	right:0
+
+.pivoton-side
+	background:orange
+	height: 100%
+	z-index:2
+
+
+.pivoton-bottom
+	background:red
+	width:100%
+	height: 40px
+	bottom:0
+	right:0
+
+
+
+.pivoton-left
+	width:25px
+	bottom:0
+	left:0
+
+
+.pivoton-corner
+	width:25px
+	height:25px
+	background: pink
+	z-index:3
+
+
+.pivoton-top-right
+	top:0
+	right:0
+
+
+.pivoton-bottom-right
+	bottom:0
+	right:0
+
+
+
+.pivoton-bottom-left
+	bottom:0
+	left:0
+
+
+.pivoton-top-left
+	top:0
+	left:0
+
+
+/*===== Transitions ========*/
+
+.pivoton-top-transition
+	//transform: rotate3d(1,0,0,30deg)
+	box-shadow: 0 5px 10px rgba(0,0,0,0.3) !important
+
+.pivoton-right-transition
+	//transform: rotate3d(0,1,0,30deg)
+
+.pivoton-bottom-transition
+	//transform: rotate3d(1,0,0,-30deg)
+
+.pivoton-left-transition
+	//transform: rotate3d(0,1,0,-30deg)
+
+.pivoton-top-right-transition
+	//transform: rotate3d(1,0.5,0,30deg)
+	box-shadow: -2px 5px 10px rgba(0,0,0,0.3)
+
+.pivoton-bottom-right-transition
+	//transform: rotate3d(1,-0.5,0,-30deg)
+
+.pivoton-bottom-left-transition
+	//transform: rotate3d(1,0.5,0,-30deg)
+
+.pivoton-top-left-transition
+	//transform: rotate3d(1,-0.5,0,30deg)
+	box-shadow: 2px 5px 10px rgba(0,0,0,0.3)
+
