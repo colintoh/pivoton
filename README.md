@@ -1,3 +1,5 @@
+![Pivoton Logo](http://colintoh.github.io/pivoton/example/images/big_logo.png)
+
 Pivoton
 ==============================
 Adding a pivotal animation to your buttons.
