@@ -1,0 +1,101 @@
+.pivoton-stage {
+  -webkit-perspective: 400;
+  -moz-perspective: 400;
+  -ms-perspective: 400;
+  perspective: 400;
+  -webkit-perspective-origin: 50% 50%;
+  -moz-perspective-origin: 50% 50%;
+  -ms-perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
+}
+
+.pivoton-button {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: rotate3d(1, 0.5, 0, 0deg) translateZ(0);
+  -moz-transform: rotate3d(1, 0.5, 0, 0deg) translateZ(0);
+  -o-transform: rotate3d(1, 0.5, 0, 0deg) translateZ(0);
+  -ms-transform: rotate3d(1, 0.5, 0, 0deg) translateZ(0);
+  transform: rotate3d(1, 0.5, 0, 0deg) translateZ(0);
+}
+.pivoton-overlay {
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+.pivoton-overlay:active,
+.pivoton-overlay:hover {
+  background: #000;
+}
+.pivoton-top {
+  background: #00f;
+  width: 100%;
+  height: 40px;
+  top: 0;
+}
+.pivoton-right {
+  width: 25px;
+  top: 0;
+  right: 0;
+}
+.pivoton-side {
+  background: #ffa500;
+  height: 100%;
+  z-index: 2;
+}
+.pivoton-bottom {
+  background: #f00;
+  width: 100%;
+  height: 40px;
+  bottom: 0;
+  right: 0;
+}
+.pivoton-left {
+  width: 25px;
+  bottom: 0;
+  left: 0;
+}
+.pivoton-corner {
+  width: 25px;
+  height: 25px;
+  background: #ffc0cb;
+  z-index: 3;
+}
+.pivoton-top-right {
+  top: 0;
+  right: 0;
+}
+.pivoton-bottom-right {
+  bottom: 0;
+  right: 0;
+}
+.pivoton-bottom-left {
+  bottom: 0;
+  left: 0;
+}
+.pivoton-top-left {
+  top: 0;
+  left: 0;
+}
+/*===== Transitions ========*/
+.pivoton-top-transition {
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.3) !important;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3) !important;
+}
+.pivoton-top-right-transition {
+  -webkit-box-shadow: -2px 5px 10px rgba(0,0,0,0.3);
+  box-shadow: -2px 5px 10px rgba(0,0,0,0.3);
+}
+.pivoton-top-left-transition {
+  -webkit-box-shadow: 2px 5px 10px rgba(0,0,0,0.3);
+  box-shadow: 2px 5px 10px rgba(0,0,0,0.3);

@@ -49843,14 +49843,14 @@ if (typeof location !== 'undefined' && (location.hostname === 'localhost' || loc
   				addElements: function(){
 
   					$ele.addClass('pivoton-button')
-			    		.wrap('<div id="'+$ele.data('id')+'" class="stage"></div>')
-			    		.parent('.stage').prepend('<div class="pivoton-overlay pivoton-top"></div><div class="pivoton-overlay pivoton-right pivoton-side"></div><div class="pivoton-overlay pivoton-bottom"></div><div class="pivoton-overlay pivoton-left pivoton-side"></div><div class="pivoton-overlay pivoton-top-right pivoton-corner"></div><div class="pivoton-overlay pivoton-bottom-right pivoton-corner"></div><div class="pivoton-overlay pivoton-bottom-left pivoton-corner"></div><div class="pivoton-overlay pivoton-top-left pivoton-corner"></div>');
+			    		.wrap('<div id="'+$ele.data('id')+'" class="pivoton-stage"></div>')
+			    		.parent('.pivoton-stage').prepend('<div class="pivoton-overlay pivoton-top"></div><div class="pivoton-overlay pivoton-right pivoton-side"></div><div class="pivoton-overlay pivoton-bottom"></div><div class="pivoton-overlay pivoton-left pivoton-side"></div><div class="pivoton-overlay pivoton-top-right pivoton-corner"></div><div class="pivoton-overlay pivoton-bottom-right pivoton-corner"></div><div class="pivoton-overlay pivoton-bottom-left pivoton-corner"></div><div class="pivoton-overlay pivoton-top-left pivoton-corner"></div>');
   				},
   				setStyle: function(){
   					this.width = $ele.outerWidth();
   					this.height = $ele.outerHeight();
 
-  					var stage = $ele.parent('.stage');
+  					var stage = $ele.parent('.pivoton-stage');
   					stage.width(this.width).height(this.height);
   					this.cssPrefixer(stage,'perspective',this.settings.perspective);
   					this.cssPrefixer($ele,'transition','all '+this.settings.speed+'s '+this.settings.easing);
