@@ -6,19 +6,179 @@
 <head>
     <meta charset="utf-8">
     <title>Pivoton</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="pivoton.css">
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="jquery.pivoton.js"></script>
+    <style>
+        /*===========
+        * Color Guide
+        * -----------
+        * background: #f4fafd;
+        * mainText: #414141;
+        * sideText: #707070;
+        * ==========*/
+        body{
+            background: #f4fafd;
+            color: #414141;
+            font-family: 'Open Sans', sans-serif;
+            padding-bottom: 20px;
+        }
+
+        .logo {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        h1 {
+            font-weight:700;
+            font-family: 'Open Sans', sans-serif;
+            background: url('images/logo.png') no-repeat 0 50%;
+            padding-left: 75px;
+            display: inline-block;
+            font-size: 36px;
+        }
+
+        .logo p{
+            text-align: center;
+            font-weight: 400;
+            font-size: 14px;
+            color: #707070;
+        }
+
+        .button-groups{
+            width: 200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .button-groups .pivoton-stage{
+            display: inline-block;
+            margin-bottom:20px;
+        }
+
+        .cue {
+            text-align: center;
+            color: #707070;
+            padding-top:80px;
+        }
+
+        .demo{
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        #demoBtn {
+            display: inline-block;
+        }
+
+        .debug-panel{
+            background: #414141;
+            padding:10px 20px;
+            border-radius: 15px;
+            color: #f4fafd;
+        }
+
+        ul {
+            list-style: none;
+            width: 300px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 40px;
+        }
+
+        li span:nth-child(1){
+            font-weight: 700;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        li p{
+            background: #414141;
+            color: #f4fafd;
+            margin-top: 10px;
+        }
+
+    </style>
     <script>
         $(function(){
-            $('.btn').pivoton();
+            $('.btn-success').pivoton();
+            $('div[data-id=demoBtn]').pivoton();
+            $('div[data-id=debugBtn]').pivoton({
+                debug: true,
+                callback: function(direction){
+                    $('.button-groups .debug-panel').text(direction);
+                }
+            });
         });
     </script>
 </head>
 <body>
     <!-- ApplicationView -->
-    <div data-id="fatBtn" class="btn btn-success btn-large">Fat button</div>
-    <div data-id="smallBtn" class="btn btn-danger">Fat button</div>
+    <div class="logo">
+        <h1>Pivoton</h1>
+        <p>Pivoting your buttons since 2013</p>
+    </div>
+
+    <div class="demo">
+        <span>Change this
+            <div class="btn btn-warning">Boring....</div>
+        </span>
+        <span>to</span>
+        <span>this
+        <div data-id="demoBtn" class="btn btn-warning">Oh My..</div></span>
+    </div>
+
+    <p class="first-cue cue">Touch me around the edges:</p>
+
+    <div class="button-groups">
+        <div data-id="largeBtn" class="btn btn-success btn-lg">Large button</div>
+        <div data-id="normalBtn" class="btn btn-success">Normal button</div>
+        <div data-id="smallBtn" class="btn btn-success">Small button</div>
+    </div>
+
+    <p class="cue">Default Options:</p>
+
+    <ul>
+        <li>
+            <span>degree:</span><span>30</span>
+            <p class="debug-panel">The degree of the pivot.</p>
+        </li>
+        <li>
+            <span>easing:</span><span>'ease'</span>
+            <p class="debug-panel">The animation of the pivot. Supports any CSS3 transition.</p>
+        </li>
+        <li>
+            <span>speed:</span><span>0.3</span>
+            <p class="debug-panel">Pivot speed in seconds</p>
+        </li>
+        <li>
+            <span>perspective:</span><span>400</span>
+            <p class="debug-panel">The smaller the perspective, the crazier it gets.</p>
+        </li>
+        <li>
+            <span>activeClass:</span><span>'active</span>
+            <p class="debug-panel">The class that will be added after clicking on the button.</p>
+        </li>
+        <li>
+            <span>debug:</span><span>false</span>
+            <p class="debug-panel">Debugging the bug.</p>
+        </li>
+    </ul>
+
+    <p class="cue">Debug Mode:</p>
+
+    <div class="button-groups">
+        <div data-id="debugBtn" class="btn btn-lg">Large button</div>
+        <div class="debug-panel">Null</div>
+    </div>
+
+    <p class="cue">For more info:</p>
+    <p>Check out ....</p>
+
 </body>
 </html>
