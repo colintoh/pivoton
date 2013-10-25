@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>Pivoton</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="pivoton.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="jquery.pivoton.js"></script>
+    <script>
+        $(function(){
+            $('.btn').pivoton();
+        });
+    </script>
+</head>
+<body>
+    <!-- ApplicationView -->
+    <div data-id="fatBtn" class="btn btn-success btn-large">Fat button</div>
+    <div data-id="smallBtn" class="btn btn-danger">Fat button</div>
+</body>
+</html>
