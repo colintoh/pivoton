@@ -99,9 +99,9 @@
   box-shadow: 0 5px 10px rgba(0,0,0,0.3) !important;
 }
 .pivoton-top-right-transition {
-  -webkit-box-shadow: -2px 5px 10px rgba(0,0,0,0.3);
+  -webkit-box-shadow: -2px 5px 10px rgba(0,0,0,0.3) !important;
   box-shadow: -2px 5px 10px rgba(0,0,0,0.3);
 }
 .pivoton-top-left-transition {
-  -webkit-box-shadow: 2px 5px 10px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 2px 5px 10px rgba(0,0,0,0.3) !important;
   box-shadow: 2px 5px 10px rgba(0,0,0,0.3);
