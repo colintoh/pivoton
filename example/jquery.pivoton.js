@@ -59,12 +59,13 @@
           bindEvent: function(ele,transitionName){
             var that = this,
                 normalizeMouseDown = (that.isTouchDevice()) ? "touchstart" : "mousedown",
-                normalizeClick = (that.isTouchDevice()) ? "touchend" : "click";
+                normalizeClick = (that.isTouchDevice()) ? "touchend" : "click",
+                normalizeMouseUp = (that.isTouchDevice()) ? "touchend" : "mouseup";
 
 
             $ele.siblings(ele).on(normalizeMouseDown,function(){
               $(this).siblings('.pivoton-button').addClass(transitionName).addClass(that.settings.activeClass);
-
+              $ele.trigger("pivoton-down",[that.direction(ele)]);
 
               switch(ele){
                 case ".pivoton-top":
@@ -95,7 +96,7 @@
               }
             }).on(normalizeClick,function(){
 
-              var direction = ele.replace('.pivoton-','');
+              var direction = that.direction(ele);
               //Log the direction
               if(that.settings.debug){
                 console.log(direction);
@@ -108,6 +109,8 @@
 
               }
 
+            }).on(normalizeMouseUp,function(){
+                $ele.trigger("pivoton-up",[that.direction(ele)]);
             });
           },
           bindAllEvents: function(){
@@ -145,6 +148,9 @@
             ele.css('-ms-'+key,value);
             ele.css('-o-'+key,value);
             ele.css(key,value);
+          },
+          direction: function(ele){
+            return ele.replace('.pivoton-','');
           },
           isTouchDevice: function(){
 

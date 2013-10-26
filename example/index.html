@@ -70,9 +70,38 @@
             padding: 80px 0;
         }
 
-        #demoBtn {
-            display: inline-block;
+        .demoBtn-wrapper {
+            width: 156px;
+            height: 116px;
+            margin: 0px auto;
+            background: url('images/arrows.png') no-repeat  4px 0;
+            padding-top: 35px;
+            position: relative;
         }
+
+        #demoBtn {
+            margin: 0px auto 0;
+            position:relative;
+            z-index: 2;
+        }
+
+        .twinkle {
+            background: url('images/twinkle.png'); no-repeat 0 0;
+            width:13px;
+            height: 12px;
+            position: absolute;
+            z-index: 1;
+            top: 30px;
+            right: 18px;
+            -webkit-transition: 100ms ease-in;
+            opacity: 0;
+        }
+
+            .twinkle.show{
+                top: 32px;
+                right: 20px;
+                opacity: 1;
+            }
 
         .debug-panel{
             background: #414141;
@@ -112,7 +141,21 @@
     <script>
         $(function(){
             $('.btn-success').pivoton();
-            $('div[data-id=demoBtn]').pivoton();
+
+            var $demoBtn = $('div[data-id=demoBtn]');
+            $demoBtn.pivoton();
+
+            $demoBtn.on('pivoton-down',function(e,direction){
+                if(direction === 'top-right'){
+                    $('.twinkle').addClass('show');
+                }
+            })
+
+            $demoBtn.on('pivoton-up',function(e){
+                $('.twinkle').removeClass('show');
+            })
+
+
             $('div[data-id=debugBtn]').pivoton({
                 debug: true,
                 callback: function(direction){
@@ -130,21 +173,12 @@
     </div>
 
     <div class="demo">
-        <span>Change this
-            <div class="btn btn-warning">Boring....</div>
-        </span>
-        <span>to</span>
-        <span>this
-        <div data-id="demoBtn" class="btn btn-warning">Oh My..</div></span>
+        <div class="demoBtn-wrapper">
+            <div data-id="demoBtn" class="btn btn-warning btn-lg">Oh My..</div>
+            <div class="twinkle"></div>
+        </div>
     </div>
 
-    <p class="first-cue cue">Touch me around the edges:</p>
-
-    <div class="button-groups">
-        <div data-id="largeBtn" class="btn btn-success btn-lg">Large button</div>
-        <div data-id="normalBtn" class="btn btn-success">Normal button</div>
-        <div data-id="smallBtn" class="btn btn-success">Small button</div>
-    </div>
 
     <p class="cue">Default Options:</p>
 
@@ -172,6 +206,18 @@
         <li>
             <span>debug:</span><span>false</span>
             <p class="debug-panel">Debugging the bug.</p>
+        </li>
+    </ul>
+
+    <p class="cue">Events:</p>
+    <ul>
+        <li>
+            <span>pivoton-up</span>
+            <p class="debug-panel">When pivoton button is pressed.</p>
+        </li>
+        <li>
+            <span>pivoton-down</span>
+            <p class="debug-panel">When pivoton button is release.</p>
         </li>
     </ul>
 
