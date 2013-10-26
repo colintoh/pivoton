@@ -56,6 +56,18 @@ Options:
 
 ```debug[true/false]```: Debugging the bug.
 
+Events:
+----------------
+    $demoBtn.on('pivoton-down',function(e,direction){
+        if(direction === 'top-right'){
+            $('.twinkle').addClass('show');
+        }
+    })
+
+```pivoton-up``` : Button is pressed.
+
+```pivoton-down```: Button is released.
+
 ----------
 
 Additional Settings
