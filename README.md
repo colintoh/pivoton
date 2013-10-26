@@ -6,6 +6,8 @@ Adding a pivotal animation to your buttons.
 
 ![Pivoton Logo](http://colintoh.github.io/pivoton/example/images/demo.png)
 
+**Code**: https://github.com/colintoh/pivoton/blob/master/example/jquery.pivoton.js
+
 **Demo page**: http://colintoh.github.io/pivoton/example/index.html
 
 **Blog Post**:
