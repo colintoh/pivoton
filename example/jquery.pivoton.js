@@ -57,9 +57,12 @@
 
           },
           bindEvent: function(ele,transitionName){
-            var that = this;
+            var that = this,
+                normalizeMouseDown = (that.isTouchDevice()) ? "touchstart" : "mousedown",
+                normalizeClick = (that.isTouchDevice()) ? "touchend" : "click";
 
-            $ele.siblings(ele).on('mousedown',function(){
+
+            $ele.siblings(ele).on(normalizeMouseDown,function(){
               $(this).siblings('.pivoton-button').addClass(transitionName).addClass(that.settings.activeClass);
 
 
@@ -90,7 +93,7 @@
                   break;
 
               }
-            }).on('click',function(){
+            }).on(normalizeClick,function(){
 
               var direction = ele.replace('.pivoton-','');
               //Log the direction
@@ -109,7 +112,8 @@
           },
           bindAllEvents: function(){
 
-            var that = this;
+            var that = this,
+                normalizeMouseUp = (that.isTouchDevice()) ? "touchend" : "mouseup";
 
             that.transitionStr = "";
 
@@ -119,7 +123,7 @@
 
             that.transitionStr += that.settings.activeClass;
 
-            $('body').on('mouseup',function(){
+            $('body').on(normalizeMouseUp,function(){
               setTimeout(function(){
                 var $pivotonEle = $('.pivoton-button');
                 $pivotonEle.removeClass(that.transitionStr);
@@ -141,6 +145,16 @@
             ele.css('-ms-'+key,value);
             ele.css('-o-'+key,value);
             ele.css(key,value);
+          },
+          isTouchDevice: function(){
+
+            //from Modernizer
+            if(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
+              return true;
+            } else {
+              return false;
+            }
+
           }
         }
 
